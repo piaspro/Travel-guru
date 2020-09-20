@@ -1,0 +1,8 @@
+.destination {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+.info {
+    width: 400px;
+}

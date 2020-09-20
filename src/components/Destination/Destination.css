@@ -1,0 +1,14 @@
+.img {
+    height: 250px;
+    width: 150px;
+    margin: 20px;
+    padding-top: 50px;
+}
+.img :hover {
+    border: 2px solid yellow;
+    cursor: pointer;
+}
+.display {
+    display: flex;
+    align-items: center;
+}
