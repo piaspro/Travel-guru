@@ -21,11 +21,22 @@
 }
 .user-info {
     display: flex;
-    padding: 30px 15px 0px 15px;
+    padding: 10px 15px 0px 15px;
 }
 .user{
     display:flex;
 }
 .btn-login{
-    margin-top: 45px;
+    margin-top: 15px;
+}
+.menuItem {
+    text-decoration: none;
+    color: black;
+}
+.MuiAppBar-colorPrimary {
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: black !important;
+}
+.MuiPaper-elevation4{
+    box-shadow: none !important;
 }

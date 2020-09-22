@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import './Login.css'
 import {userContext} from '../../App'
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import * as firebase from "firebase/app";
@@ -107,14 +108,16 @@ const Login = () => {
     }
     return (
         <div className="form-container">
-                <h2>Log In</h2>
+            <div className="form">
+            <h2>Log In</h2>
                 <form onSubmit={handleSubmit}>
                     <input className="input-field" type="text" name="" placeholder="User Name or Email" required/> <br/> <br/>
                     <input className="input-field" type="Password" name="" placeholder="Password" required/> <br/> <br/>
                     <input type="checkbox" name="remember" id=""/> <label htmlFor="remember">Remember Me</label> <br/> <br/>
                     <input className="input-btn" type="submit" value="Sign In"/>
                 </form>
-                    <p>Don't have account? <Link to="/newUser">Create an account</Link></p>
+                    <h6>Don't have account? <Link to="/newUser">Create an account</Link></h6>
+            </div>
                     <p>---------- or ----------</p>
                     <p style={{color:'red'}}>{user.error}</p>
                 <div>

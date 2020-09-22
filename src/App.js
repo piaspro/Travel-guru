@@ -8,7 +8,6 @@ import Login from './components/Login/Login';
 import NewUser from './components/NewUser/NewUser';
 import CoxsbazarBooking from './components/CoxsbazarBooking/CoxsbazarBooking';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import HotelPicker from './components/HotelPicker/HotelPicker';
 import Header from './components/Header/Header';
 import Hotels from './components/Hotels/Hotels';
 
@@ -19,7 +18,7 @@ function App() {
   const [loggedInUser, SetLoggedInUser] = useState({});
 
   return (
-    <userContext.Provider value={[loggedInUser, SetLoggedInUser]}>
+    <userContext.Provider value={[loggedInUser, SetLoggedInUser]} className="App">
       <Router>
         <Header/>
         <Switch>
@@ -35,7 +34,7 @@ function App() {
           <Route path="/hotelPicker">
             <Hotels/>
           </Route>
-          <Route path="/coxsbazar">
+          <Route path="/destination/:id">
             <CoxsbazarBooking/>
           </Route>
           <PrivateRoute path="/coxsbazar">

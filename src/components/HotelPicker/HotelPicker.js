@@ -8,6 +8,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    margin: theme.spacing(2),
   },
   paper: {
     padding: theme.spacing(2),
@@ -24,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     maxHeight: '100%',
   },
+  icon:  {
+    height: 10,
+  }
 }));
 
 const HotelPicker = ({hotel}) => {
@@ -58,7 +62,9 @@ const HotelPicker = ({hotel}) => {
               </Grid>
             </Grid>
             <Grid item>
-                <Typography variant="subtitle1">{hotel.avatar}</Typography>
+              <img className={classes.icon} alt="complex" src={hotel.avatar} />
+              <img className={classes.icon} alt="complex" src={hotel.avatar} />
+              <img className={classes.icon} alt="complex" src={hotel.avatar} />
             </Grid>
           </Grid>
         </Grid>

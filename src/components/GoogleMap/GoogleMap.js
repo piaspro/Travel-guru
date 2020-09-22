@@ -6,7 +6,7 @@ const SimpleMap = () => {
  
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '500px', width: '350px', borderRadius: '20%', paddingTop: '50px', paddingLeft: '50px'  }}>
+      <div style={{ height: '600px', width: '400px', borderRadius: '20px', paddingTop: '65px', paddingLeft: '50px'  }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyBA2aNuMugMhNpw-kTcMG_ehqt2HLQG1E4' }}
           defaultCenter={{ lat: 23.450001, lng: 91.199997}}
