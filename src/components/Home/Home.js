@@ -48,7 +48,7 @@ const Home = () => {
                             <div className="info">
                                 <h1>{destination.name}</h1>
                                 <p>{destination.details}</p>
-                                <Link className="btn-login" to={`/destination/${destination.id}`}><ColorButton variant="contained" color="primary" className={classes.margin}>  Booking -> </ColorButton></Link>
+                                <Link className="btn-login" to={`/booking/${destination.key}`}><ColorButton variant="contained" color="primary" className={classes.margin}>  Booking -> </ColorButton></Link>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ const Home = () => {
                 {
                     Destination.map(info =>
                         <Grid item xs={12} sm={4} md={4}>
-                            <img className="destinationImg" onClick={() => handleClick(info)} src={info.image} key={info.id} alt="" />
+                            <img className="destinationImg" onClick={() => handleClick(info)} src={info.image} key={info.key} alt="" />
                         </Grid> )
                 }
             </Grid>

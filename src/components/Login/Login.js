@@ -84,7 +84,6 @@ const Login = () => {
             const passwordNumber = /\d{1}/.test(e.target.value);
             isFormValid = isPasswordValid && passwordNumber;
         }if (isFormValid){
-            console.log(e.target.name,':', e.target.value)
             const newUserInfo = {...user};
             newUserInfo[e.target.name] = e.target.value;
             setUser(newUserInfo);
@@ -115,7 +114,7 @@ const Login = () => {
     return (
         <div className="form-container">
             <div className="form">
-            <h2>Log In</h2>
+                <h2>Log In</h2>
                 <form onSubmit={handleSubmit}>
                     <input onBlur={handleChange} className="input-field" type="email" name="email" placeholder="User Name or Email" required/> <br/> <br/>
                     <input onBlur={handleChange} className="input-field" type="password" name="password" placeholder="Password" required/> <br/> <br/>
@@ -127,12 +126,10 @@ const Login = () => {
             </div>
             <div className="align-item">
                     <p>---------- or ----------</p>
-                    <p style={{color:'red'}}>{user.error}</p>
-                
-                    <ColorButton  variant="contained" color="primary" onClick={handleGoogleSignIn}> <img className="icon" src={google} alt=''/>Continue with Google</ColorButton>
+                    <ColorButton  variant="contained" onClick={handleGoogleSignIn}> <img className="icon" src={google} alt=''/>Continue with Google</ColorButton>
                 <br/>
                 <br/>
-                    <ColorButton variant="contained" color="primary" onClick={handleFbSignIn}> <img className="icon" src={facebook} alt=''/>Continue with Facebook</ColorButton>
+                    <ColorButton variant="contained" onClick={handleFbSignIn}> <img className="icon" src={facebook} alt=''/>Continue with Facebook</ColorButton>
             </div>
         </div>
     );

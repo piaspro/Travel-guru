@@ -21,7 +21,7 @@ const Booking = () => {
     const classes = useStyles();
     const [destination, setDestination] = useState(Destination);
     let { id } = useParams();
-    const {name, details} = destination[id];
+    const {name, details, key} = destination[id];
     return (
         <div className={classes.root}>
         <Grid container justify="center" sm={12} xs={12}>
@@ -38,7 +38,8 @@ const Booking = () => {
                 </Grid>
             </Grid>
             <Grid container spacing={4} sm={6} md={6} xs={6}>
-               <DatePickerNew name={name}></DatePickerNew>
+               <DatePickerNew name={name}
+               id={key} ></DatePickerNew>
             </Grid>
         </Grid>
     </div>

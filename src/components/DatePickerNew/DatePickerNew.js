@@ -28,7 +28,7 @@ const ColorButton = withStyles((theme) => ({
     }));
 
 
-const DatePickerNew = ({name}) => {
+const DatePickerNew = ({name, id}) => {
   // The first commit of Material-UI
   const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -74,7 +74,7 @@ const DatePickerNew = ({name}) => {
                 />
             </MuiPickersUtilsProvider>
         </div>
-        <Link className="btn-login" to="/hotelPicker"><ColorButton variant="contained" color="primary" className={classes.margin}> Start Booking </ColorButton></Link>
+        <Link className="btn-login" to={`/hotel/${id}`}><ColorButton variant="contained" color="primary" className={classes.margin}> Start Booking </ColorButton></Link>
       </div>
   );
 }

@@ -12,6 +12,10 @@
     text-align: center;
 }
 .icon{
-    height: 25px;
+    height: 22px;
     padding-right: 5px;
+}
+.MuiButton-root{
+    letter-spacing: 0.01em !important;
+    font-size: 0.8rem !important;
 }

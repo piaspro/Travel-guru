@@ -96,7 +96,6 @@ const NewUser = () => {
             const passwordNumber = /\d{1}/.test(e.target.value);
             isFormValid = isPasswordValid && passwordNumber;
         }if (isFormValid){
-            console.log(e.target.name,':', e.target.value)
             const newUserInfo = {...user};
             newUserInfo[e.target.name] = e.target.value;
             setUser(newUserInfo);
@@ -143,10 +142,9 @@ const NewUser = () => {
             </div>
             <div className="align-item">
                 <p>---------- or ----------</p>
-                
-                    <ColorButton  variant="contained" color="primary" className={classes.margin} onClick={handleGoogleSignIn}> <img className="logo" src={google} alt=''/> Sign In with Google </ColorButton>
+                    <ColorButton  variant="contained" className={classes.margin} onClick={handleGoogleSignIn}> <img className="icon" src={google} alt=''/>Continue with Google</ColorButton>
                 <br/>
-                    <ColorButton variant="contained" color="primary" className={classes.margin} onClick={handleFbSignIn}> <img className="logo" src={facebook} alt=''/> Sign In with Facebook </ColorButton>
+                    <ColorButton variant="contained" className={classes.margin} onClick={handleFbSignIn}> <img className="icon" src={facebook} alt=''/>Continue with Facebook</ColorButton>
             </div>
         </div>
     );

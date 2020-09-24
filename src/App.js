@@ -32,11 +32,11 @@ function App() {
           <Route path="/newUser">
             <NewUser/>
           </Route>
-          <Route path="/hotelPicker">
-            <Hotels/>
-          </Route>
-          <PrivateRoute path="/destination/:id">
+          <Route path="/booking/:id">
             <Booking/>
+          </Route>
+          <PrivateRoute path="/hotel/:key">
+            <Hotels/>
           </PrivateRoute>
           <Route exact path="/">
             <Home />
