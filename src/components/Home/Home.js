@@ -58,7 +58,7 @@ const Home = () => {
                 {
                     Destination.map(info =>
                         <Grid item xs={12} sm={4} md={4}>
-                            <img className=" destinationImg" onClick={() => handleClick(info)} src={info.image} key={info.id} alt="" />
+                            <img className="destinationImg" onClick={() => handleClick(info)} src={info.image} key={info.id} alt="" />
                         </Grid> )
                 }
             </Grid>

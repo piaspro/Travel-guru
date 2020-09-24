@@ -15,13 +15,13 @@
 .destinationImg{
     height: 320px;
     width: 200px;
-    margin: 20px 10px;
+    margin: 50px 10px;
     cursor: pointer;
 }
 .destinationImg:hover{
     border: 2px solid rgb(245, 201, 4);
     height: 320px;
     width: 200px;
-    margin: 20px 10px;
+    margin: 50px 10px;
     border-radius: 15px;
 }

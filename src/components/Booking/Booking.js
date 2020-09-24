@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import './CoxsbazarBooking.css';
+import './Booking.css';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import DatePickerNew from '../DatePickerNew/DatePickerNew';
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const CoxsbazarBooking = () => {
+const Booking = () => {
     const classes = useStyles();
     const [destination, setDestination] = useState(Destination);
     let { id } = useParams();
@@ -45,4 +45,4 @@ const CoxsbazarBooking = () => {
     );
 };
 
-export default CoxsbazarBooking;
+export default Booking;

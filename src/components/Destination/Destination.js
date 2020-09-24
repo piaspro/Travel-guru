@@ -1,4 +1,4 @@
-import coxsBazar from '../../Image/coxsBazar.png';
+import coxsbazar from '../../Image/coxsBazar.png';
 import Sreemongol from '../../Image/Sreemongol.png';
 import sundorbon from '../../Image/sundorbon.png';
 
@@ -7,7 +7,7 @@ export const  Destination = [
         id: 0,
         name: "COX'S BAZAR",
         details: "Cox's Bazar (Bengali: কক্সবাজার, pronounced [kɔksbadʒaɾ]) is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it is infamous for the largest refugee camp in the world.",
-        image: coxsBazar
+        image: coxsbazar
     },
     {
         id: 1,

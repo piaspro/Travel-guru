@@ -39,8 +39,11 @@ const DatePickerNew = ({name}) => {
  const classes = useStyles();
   return (
       <div className="date-picker"> 
-          <input className="input-field" type="text" placeholder="Dhaka"/> <br/> <br/>
-          <input className="input-field" type="text" placeholder={name}/>
+          <label htmlFor="origin">Origin</label> <br/>
+          <input className="input-field" id="origin" type="text" placeholder="Dhaka"/>
+          <br/> <br/>
+          <label htmlFor="destination">Destination</label> <br/>
+          <input className="input-field" id="destination"type="text" placeholder={name}/>
         <div>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <KeyboardDatePicker
@@ -71,7 +74,7 @@ const DatePickerNew = ({name}) => {
                 />
             </MuiPickersUtilsProvider>
         </div>
-        <Link className="btn-login" to="/newUser"><ColorButton variant="contained" color="primary" className={classes.margin}> Start Booking </ColorButton></Link>
+        <Link className="btn-login" to="/hotelPicker"><ColorButton variant="contained" color="primary" className={classes.margin}> Start Booking </ColorButton></Link>
       </div>
   );
 }

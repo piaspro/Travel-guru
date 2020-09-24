@@ -6,10 +6,11 @@ import {BrowserRouter as Router,
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import NewUser from './components/NewUser/NewUser';
-import CoxsbazarBooking from './components/CoxsbazarBooking/CoxsbazarBooking';
+import Booking from './components/Booking/Booking';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Header from './components/Header/Header';
 import Hotels from './components/Hotels/Hotels';
+import NotFound from './components/NotFound/NotFound';
 
 export const userContext = createContext();
 
@@ -34,14 +35,14 @@ function App() {
           <Route path="/hotelPicker">
             <Hotels/>
           </Route>
-          <Route path="/destination/:id">
-            <CoxsbazarBooking/>
-          </Route>
-          <PrivateRoute path="/coxsbazar">
-            <CoxsbazarBooking/>
+          <PrivateRoute path="/destination/:id">
+            <Booking/>
           </PrivateRoute>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path = "*">
+              <NotFound></NotFound>
           </Route>
         </Switch>
       </Router>

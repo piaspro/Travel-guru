@@ -1,5 +1,17 @@
 .form{
+    text-align: center;
     border: 1px solid gray;
     border-radius: 5px;
-    margin: 0px 550px;
+    width: 250px;
+}
+.form-container{
+    margin: auto;
+    width: 250px;
+}
+.align-item{
+    text-align: center;
+}
+.icon{
+    height: 25px;
+    padding-right: 5px;
 }
