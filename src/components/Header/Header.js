@@ -103,7 +103,6 @@ const Header = () => {
     const handleSignOut = () => {
         firebase.auth().signOut()
         .then( res => {
-          console.log(res);
           const signedOutUser = {
                 isSignedIn: false,
                 name: '',

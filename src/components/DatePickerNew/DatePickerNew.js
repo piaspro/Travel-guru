@@ -30,10 +30,20 @@ const ColorButton = withStyles((theme) => ({
 
 const DatePickerNew = ({name, id}) => {
   // The first commit of Material-UI
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState({
+      startDate: new Date(),
+      endDate: new Date()
+  });
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
+  const handleDateChangeIn = (date) => {
+      const newDates = {...selectedDate}
+      newDates.startDate = date;
+    setSelectedDate(newDates);
+  };
+  const handleDateChangeOut = (date) => {
+    const newDates = {...selectedDate}
+      newDates.endDate = date;
+    setSelectedDate(newDates);
   };
   
  const classes = useStyles();
@@ -54,20 +64,21 @@ const DatePickerNew = ({name, id}) => {
                 margin="normal"
                 id="date-picker-inline"
                 label="From"
-                value={selectedDate}
-                onChange={handleDateChange}
+                value={selectedDate.startDate}
+                onChange={handleDateChangeIn}
                 KeyboardButtonProps={{
                     'aria-label': 'change date',
                 }}
                 />
                 <KeyboardDatePicker
+                variant="inline"
                 margin="normal"
-                minDate={new Date()}
-                id="date-picker-dialog"
+                minDate={selectedDate.startDate}
+                id="date-picker-inline"
                 label="To"
                 format="dd/MM/yyyy"
-                value={selectedDate}
-                onChange={handleDateChange}
+                value={selectedDate.endDate}
+                onChange={handleDateChangeOut}
                 KeyboardButtonProps={{
                     'aria-label': 'change date',
                 }}
