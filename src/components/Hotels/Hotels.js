@@ -7,17 +7,25 @@ import icon from '../../Image/Icon/star_1_.png'
 import GoogleMap from '../GoogleMap/GoogleMap';
 import Destination from '../Destination/Destination';
 import { useParams } from 'react-router-dom';
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1
+    },
+    paper: {
+      height: 140,
+      width: 100
+    },
+    control: {
+      padding: theme.spacing(2)
+    }
+  }));
 
 const Hotels = () => {
-    const style = {
-        display: 'block',
-        marginLeft: '180px',
-        marginTop: '50px',
-        float: 'left'
-    }
-    const style2 = {
-        display: 'flex'
-    }
+  const classes = useStyles();
+ 
     const hotels = [
         {
             title: 'Hotel in Coxsbazar',
@@ -114,14 +122,20 @@ const Hotels = () => {
     let { key } = useParams();
     const allHotels = hotels.filter(hotel => hotel.id == key );
     return (
-        <div style={style2}>
-            <div style={style}>
-            {
+        <Grid container className={classes.root} spacing={10}>
+            <Grid item xs={12}>
+                <Grid container justify="center" spacing={2}>
+                    <Grid item>
+                    {
                 allHotels.map(hotel => <HotelPicker key={hotel.bedType} hotel={hotel}></HotelPicker>)
             }
-            </div>
-            <GoogleMap></GoogleMap>
-        </div>
+                    </Grid>
+                    <Grid item>
+                        <GoogleMap></GoogleMap>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
     );
 };
 

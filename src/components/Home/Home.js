@@ -55,37 +55,29 @@ const Home = () => {
     }
     return (
     <div className={classes.root}>
-        <Grid container justify="center" sm={12} xs={12}>
-            <Grid container spacing={2} sm={4} xs={12}>
+            <Grid container className={classes.root} spacing={10}>
                 <Grid item xs={12}>
-                    <div className="location">
-                        <div className="destination">
-                            <div className="info">
-                                <h1>{destination.name}</h1>
-                                <p>{destination.details}</p>
-                                <Link className="btn-login" to={`/booking/${destination.key}`}><ColorButton variant="contained" color="primary" className={classes.margin}>  Booking -> </ColorButton></Link>
+                    <Grid container justify="center" spacing={2}>
+                        <Grid item>
+                            <div className="location">
+                                <div className="destination">
+                                    <div className="info">
+                                        <h1>{destination.name}</h1>
+                                        <p>{destination.details}</p>
+                                        <Link className="btn-login" to={`/booking/${destination.key}`}><ColorButton variant="contained" color="primary" className={classes.margin}>  Booking -> </ColorButton></Link>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </Grid>
-            </Grid>
-            <Grid container spacing={4} sm={6} md={6} xs={6}>
-                {/* <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">swiper 1</div>
-                        <div class="swiper-slide">swiper 2</div>
-                        <div class="swiper-slide">swiper 3</div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div> */}
+                        </Grid>
                 {
                     Destination.map(info =>
-                        <Grid item xs={12} sm={4} md={4}>
+                        <Grid item>
                             <img className="destinationImg" onClick={() => handleClick(info)} src={info.image} key={info.key} alt="" />
                         </Grid> )
                 }
+                    </Grid>
+                </Grid>
             </Grid>
-        </Grid>
     </div>
     );
 };

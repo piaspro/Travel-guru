@@ -24,22 +24,23 @@ const Booking = () => {
     const {name, details, key} = destination[id];
     return (
         <div className={classes.root}>
-        <Grid container justify="center" sm={12} xs={12}>
-            <Grid container spacing={2} sm={4} xs={12}>
-                <Grid item xs={12}>
-                    <div className="location">
-                        <div className="destination">
-                            <div className="info">
-                                <h1>{name}</h1>
-                                <p>{details}</p>
+        <Grid container justify="center" spacing={10}>
+            <Grid item>
+                <Grid container justify="center" spacing={2}>
+                    <Grid item>
+                        <div className="location">
+                            <div className="destination">
+                                <div className="info">
+                                    <h1>{name}</h1>
+                                    <p>{details}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </Grid>
+                    <Grid item>
+                        <DatePickerNew name={name} id={key} ></DatePickerNew>
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Grid container spacing={4} sm={6} md={6} xs={6}>
-               <DatePickerNew name={name}
-               id={key} ></DatePickerNew>
             </Grid>
         </Grid>
     </div>
