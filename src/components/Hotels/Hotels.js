@@ -9,23 +9,24 @@ import Destination from '../Destination/Destination';
 import { useParams } from 'react-router-dom';
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import HeaderBlack from '../HeaderBlack/HeaderBlack';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1
+        flexGrow: 1
     },
     paper: {
-      height: 140,
-      width: 100
+        height: 140,
+        width: 100
     },
     control: {
-      padding: theme.spacing(2)
+        padding: theme.spacing(2)
     }
-  }));
+}));
 
 const Hotels = () => {
-  const classes = useStyles();
- 
+    const classes = useStyles();
+
     const hotels = [
         {
             title: 'Hotel in Coxsbazar',
@@ -120,22 +121,25 @@ const Hotels = () => {
     ]
     const [destination, setDestination] = useState(Destination);
     let { key } = useParams();
-    const allHotels = hotels.filter(hotel => hotel.id == key );
+    const allHotels = hotels.filter(hotel => hotel.id == key);
     return (
-        <Grid container className={classes.root} spacing={10}>
-            <Grid item xs={12}>
-                <Grid container justify="center" spacing={2}>
-                    <Grid item>
-                    {
-                allHotels.map(hotel => <HotelPicker key={hotel.bedType} hotel={hotel}></HotelPicker>)
-            }
-                    </Grid>
-                    <Grid item>
-                        <GoogleMap></GoogleMap>
+        <div>
+            <HeaderBlack></HeaderBlack>
+            <Grid container className={classes.root} spacing={2}>
+                <Grid item xs={12}>
+                    <Grid container justify="center" spacing={8}>
+                        <Grid item>
+                            {
+                                allHotels.map(hotel => <HotelPicker key={hotel.bedType} hotel={hotel}></HotelPicker>)
+                            }
+                        </Grid>
+                        <Grid item>
+                            <GoogleMap></GoogleMap>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
-        </Grid>
+        </div>
     );
 };
 

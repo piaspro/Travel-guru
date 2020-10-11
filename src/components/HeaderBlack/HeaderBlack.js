@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { yellow } from '@material-ui/core/colors';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
-import './Header.css';
-import logo from '../../Image/Icon/Logo white.png';
+import './HeaderBlack.css';
+import logo from '../../Image/Icon/Logo.png';
 import { userContext } from '../../App';
 import { fade } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -34,30 +34,6 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.up('sm')]: {
         display: 'block',
       },
-    },
-    search: {
-      position: 'relative',
-      borderRadius: theme.shape.borderRadius,
-      backgroundColor: fade(theme.palette.common.white, 0.15),
-      '&:hover': {
-        backgroundColor: fade(theme.palette.common.white, 0.25),
-      },
-      marginRight: theme.spacing(2),
-      marginLeft: 0,
-      width: '100%',
-      [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(3),
-        width: 'auto',
-      },
-    },
-    searchIcon: {
-      padding: theme.spacing(0, 2),
-      height: '100%',
-      position: 'absolute',
-      pointerEvents: 'none',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
     },
     inputRoot: {
       color: 'inherit',
@@ -98,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
             height: '50px',
             paddingTop: "10px"
         }; 
-const Header = () => {
+const HeaderBlack = () => {
     const [loggedInUser, SetLoggedInUser] = useContext(userContext);
     const handleSignOut = () => {
         firebase.auth().signOut()
@@ -186,43 +162,22 @@ const Header = () => {
         <div className={classes.grow}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-            >
-              <MenuIcon />
-            </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
             <img style={style} src={logo} alt=""/>
             </Typography>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton>
-                    <Link className="menuItem" to="/home">Home</Link>
+                    <Link className="menuItem black" to="/home">Home</Link>
               </IconButton>
               <IconButton >
-                    <Link className="menuItem" to="/contact"> Contact</Link>
+                    <Link className="menuItem black" to="/contact"> Contact</Link>
               </IconButton>
               <IconButton >
-                    <Link className="menuItem" to="/destination">Destination</Link>
+                    <Link className="menuItem black" to="/destination">Destination</Link>
               </IconButton>
               <div className="user">
-                    <div className="user-info">
+                    <div className="user-info name">
                         <img style={style}  src={loggedInUser.photo} alt=""></img> 
                         <h4>{loggedInUser.name}</h4>
                     </div>
@@ -255,4 +210,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default HeaderBlack;

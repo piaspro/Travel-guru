@@ -1,22 +1,17 @@
 .user{
     display:flex;
 }
-.user-info{
-    display:flex;
-    padding-right: 15px;
-}
-.user-info img{
-    padding-right: 15px;
-    border-radius: 3px;
-}
 .btn-login{
     margin-top: 15px;
 }
-.menuItem {
+.black {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 20px;
     margin-right: 15px;
+}
+.name h4{
+    color: black;
 }
 .onOpen{
     color: black;

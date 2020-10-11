@@ -35,7 +35,7 @@ const SimpleMap = () => {
   console.log(findLocation.location)
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '550px', width: '360px', paddingTop: '20px' }}>
+      <div style={{ height: '550px', width: '360px', paddingTop: '20px'}}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyAarM6laJv9yjXjXPMPfK--I-kFYmMnZ4s' }}
           defaultCenter={findLocation.location}

@@ -70,13 +70,15 @@ const DatePickerNew = ({name, id}) => {
                     'aria-label': 'change date',
                 }}
                 />
+                <br/>
                 <KeyboardDatePicker
+                disableToolbar
                 variant="inline"
-                margin="normal"
                 minDate={selectedDate.startDate}
-                id="date-picker-inline"
-                label="To"
                 format="dd/MM/yyyy"
+                margin="normal"
+                id="date-picker-inline"
+                label="From"
                 value={selectedDate.endDate}
                 onChange={handleDateChangeOut}
                 KeyboardButtonProps={{
