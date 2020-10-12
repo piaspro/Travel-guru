@@ -36,6 +36,16 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
     const classes = useStyles();
+    const interval = 3000;
+    const slides = document.querySelectorAll('slide')
+    let index = 1;
+    const startSlide = () => {
+        setInterval(() => {
+            index++;
+            console.log('started')
+        }, interval);
+    }
+    startSlide();
 
     const [destination, setDestination] = useState([]);
     const handleClick = (info) => {
@@ -57,7 +67,7 @@ const Home = () => {
                             </Grid>
                             {
                                 Destination.map(info =>
-                                    <Grid item>
+                                    <Grid item className="slide">
                                         <img className="destinationImg" onClick={() => handleClick(info)} src={info.image} key={info.key} alt="" />
                                     </Grid>)
                             }

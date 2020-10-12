@@ -23,191 +23,191 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 
 
 const useStyles = makeStyles((theme) => ({
-    grow: {
-      flexGrow: 1,
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
     },
-    menuButton: {
-      marginRight: theme.spacing(2),
+  },
+  inputRoot: {
+    color: 'inherit',
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '20ch',
     },
-    title: {
-      display: 'none',
-      [theme.breakpoints.up('sm')]: {
-        display: 'block',
-      },
-    },
-    inputRoot: {
-      color: 'inherit',
-    },
-    inputInput: {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '20ch',
-      },
-    },
-    sectionDesktop: {
-      display: 'none',
-      [theme.breakpoints.up('md')]: {
-        display: 'flex',
-      },
-    },
-    sectionMobile: {
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
       display: 'flex',
-      [theme.breakpoints.up('md')]: {
-        display: 'none',
-      },
     },
-  }));
-  const ColorButton = withStyles((theme) => ({
-        root: {
-            color: theme.palette.getContrastText(yellow[500]),
-            backgroundColor: yellow[500],
-            '&:hover': {
-            backgroundColor: yellow[700],
-            },
-        },
-        }))(Button);
-  const  style = {
-            height: '50px',
-            paddingTop: "10px"
-        }; 
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+}));
+const ColorButton = withStyles((theme) => ({
+  root: {
+    color: theme.palette.getContrastText(yellow[500]),
+    backgroundColor: yellow[500],
+    '&:hover': {
+      backgroundColor: yellow[700],
+    },
+  },
+}))(Button);
+const style = {
+  height: '50px',
+  paddingTop: "10px"
+};
 const HeaderBlack = () => {
-    const [loggedInUser, SetLoggedInUser] = useContext(userContext);
-    const handleSignOut = () => {
-        firebase.auth().signOut()
-        .then( res => {
-          const signedOutUser = {
-                isSignedIn: false,
-                name: '',
-                email: '',
-                photo: '',
-                error: ''
-            };
-            SetLoggedInUser(signedOutUser);
-            
-          }).catch( (error) => {
-          });
-    }
-    const classes = useStyles();
-    const [anchorEl, setAnchorEl] = useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-  
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-  
-    const handleMobileMenuClose = () => {
-      setMobileMoreAnchorEl(null);
-    };
-  
-    const handleMenuClose = () => {
-      setAnchorEl(null);
-      handleMobileMenuClose();
-    };
-  
-    const handleMobileMenuOpen = (event) => {
-      setMobileMoreAnchorEl(event.currentTarget);
-    };
-  
-    const menuId = 'primary-search-account-menu';
-    const renderMenu = (
-      <Menu
-        anchorEl={anchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id={menuId}
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMenuOpen}
-        onClose={handleMenuClose}
-      >
-      </Menu>
-    );
-  
-    const mobileMenuId = 'primary-search-account-menu-mobile';
-    const renderMobileMenu = (
-      <Menu
-        anchorEl={mobileMoreAnchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        id={mobileMenuId}
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMobileMenuOpen}
-        onClose={handleMobileMenuClose}
-      >
-        <MenuItem>
-          <Link className="menuItem onOpen" to="/home">Home</Link>
-        </MenuItem>
-        <MenuItem>
-          <Link className="menuItem onOpen" to="/contact"> Contact</Link>
-        </MenuItem>
-        <MenuItem>
-          <Link className="menuItem onOpen" to="/destination">Destination</Link>
-        </MenuItem>
-        <MenuItem>
-            <div className="btn-login">
-                {loggedInUser.isSignedIn ?
-                    <Button variant="contained" color="primary"  onClick={handleSignOut} > Sign Out </Button>
-                    : <Link  to="/login"><ColorButton variant="contained" color="primary" > Sign In </ColorButton></Link>
-                } 
-            </div>
-        </MenuItem>
-      </Menu>
-    );
-    return (
-        <React.Fragment>
-          <CssBaseline />
-          <Container maxWidth="lg">
+  const [loggedInUser, SetLoggedInUser] = useContext(userContext);
+  const handleSignOut = () => {
+    firebase.auth().signOut()
+      .then(res => {
+        const signedOutUser = {
+          isSignedIn: false,
+          name: '',
+          email: '',
+          photo: '',
+          error: ''
+        };
+        SetLoggedInUser(signedOutUser);
+
+      }).catch((error) => {
+      });
+  }
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+    </Menu>
+  );
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <Link className="menuItem onOpen" to="/home">Home</Link>
+      </MenuItem>
+      <MenuItem>
+        <Link className="menuItem onOpen" to="/contact"> Contact</Link>
+      </MenuItem>
+      <MenuItem>
+        <Link className="menuItem onOpen" to="/destination">Destination</Link>
+      </MenuItem>
+      <MenuItem>
+        <div className="btn-login">
+          {loggedInUser.isSignedIn ?
+            <Button variant="contained" color="primary" onClick={handleSignOut} > Sign Out </Button>
+            : <Link to="/login"><ColorButton variant="contained" color="primary" > Sign In </ColorButton></Link>
+          }
+        </div>
+      </MenuItem>
+    </Menu>
+  );
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="lg">
         <div className={classes.grow}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography className={classes.title} variant="h6" noWrap>
-            <img style={style} src={logo} alt=""/>
-            </Typography>
-            <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
+          <AppBar position="static">
+            <Toolbar>
               <IconButton>
-                    <Link className="menuItem black" to="/home">Home</Link>
+                <img style={style} src={logo} alt="" />
               </IconButton>
-              <IconButton >
-                    <Link className="menuItem black" to="/contact"> Contact</Link>
-              </IconButton>
-              <IconButton >
-                    <Link className="menuItem black" to="/destination">Destination</Link>
-              </IconButton>
-              <div className="user">
-                    <div className="user-info name">
-                        <img style={style}  src={loggedInUser.photo} alt=""></img> 
-                        <h4>{loggedInUser.name}</h4>
-                    </div>
-                    <div className="btn-login">
-                        {loggedInUser.isSignedIn ?
-                            <Button variant="contained" color="primary"  onClick={handleSignOut} > Sign Out </Button>
-                            : <Link  to="/login"><ColorButton variant="contained" color="primary" > Sign In </ColorButton></Link>
-                        } 
-                    </div>  
+              <div className={classes.grow} />
+              <div className={classes.sectionDesktop}>
+                <IconButton>
+                  <Link className="menuItem black" to="/home">Home</Link>
+                </IconButton>
+                <IconButton >
+                  <Link className="menuItem black" to="/contact"> Contact</Link>
+                </IconButton>
+                <IconButton >
+                  <Link className="menuItem black" to="/destination">Destination</Link>
+                </IconButton>
+                <div className="user">
+                  <div className="user-info name">
+                    <img style={style} src={loggedInUser.photo} alt=""></img>
+                    <h4>{loggedInUser.name}</h4>
+                  </div>
+                  <div className="btn-login">
+                    {loggedInUser.isSignedIn ?
+                      <Button variant="contained" color="primary" onClick={handleSignOut} > Sign Out </Button>
+                      : <Link to="/login"><ColorButton variant="contained" color="primary" > Sign In </ColorButton></Link>
+                    }
+                  </div>
                 </div>
-            </div>
-            <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-          </Toolbar>
-        </AppBar>
-        {renderMobileMenu}
-        {renderMenu}
-      </div>
+              </div>
+              <div className={classes.sectionMobile}>
+                <IconButton
+                  aria-label="show more"
+                  aria-controls={mobileMenuId}
+                  aria-haspopup="true"
+                  onClick={handleMobileMenuOpen}
+                  color="black"
+                >
+                  <MoreIcon />
+                </IconButton>
+              </div>
+            </Toolbar>
+          </AppBar>
+          {renderMobileMenu}
+          {renderMenu}
+        </div>
       </Container>
     </React.Fragment>
-    );
+  );
 };
 
 export default HeaderBlack;
