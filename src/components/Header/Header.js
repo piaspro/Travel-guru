@@ -221,7 +221,7 @@ const Header = () => {
                   <div className="btn-login">
                     {loggedInUser.isSignedIn ?
                       <Button variant="contained" color="primary" onClick={handleSignOut} > Sign Out </Button>
-                      : <Link to="/login"><ColorButton variant="contained" color="primary" > Sign In </ColorButton></Link>
+                      : <Link className="btn-login"  to="/login"><ColorButton variant="contained" color="primary" > Sign In </ColorButton></Link>
                     }
                   </div>
                 </div>

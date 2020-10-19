@@ -8,7 +8,6 @@ import Login from './components/Login/Login';
 import NewUser from './components/NewUser/NewUser';
 import Booking from './components/Booking/Booking';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Header from './components/Header/Header';
 import Hotels from './components/Hotels/Hotels';
 import NotFound from './components/NotFound/NotFound';
 
