@@ -20,49 +20,40 @@ const ColorButton = withStyles((theme) => ({
     },
 }))(Button);
 
-const useStyles = makeStyles((theme) => ({
-    margin: {
-        margin: theme.spacing(1),
-    },
-    root: {
-        flexGrow: 1,
-    },
-    paper: {
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-    },
-}));
-
 const Home = () => {
-    const classes = useStyles();
-    
+
     const [destination, setDestination] = useState(Destination[0]);
     const handleClick = (info) => {
         setDestination(info);
     }
     return (
         <div className="back-img" style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('${image}')` }}>
-            <div className={classes.root} >
-                <Header />
-                <Grid container className={classes.root} spacing={10}>
+            <div>
+                <div className="header">
+                    <Header/>
+                </div>
+                <Grid container>
                     <Grid item xs={12}>
-                        <Grid container justify="center" spacing={2}>
+                        <Grid container justify="center">
                             <Grid item>
                                 <div className="info">
                                     <h1>{destination.name}</h1>
                                     <p>{destination.details}</p>
-                                    <Link className="btn-login" to={`/booking/${destination.key}`}><ColorButton variant="contained" color="primary" className={classes.margin}>  Booking -> </ColorButton></Link>
+                                    <Link className="btn-login" to={`/booking/${destination.key}`}><ColorButton variant="contained" color="primary">  Booking -> </ColorButton></Link>
                                 </div>
                             </Grid>
-                            {
-                                Destination.map(info =>
-                                    <div className="slide">
-                                        <Grid item>
-                                            <img className="destinationImg" key={info.key} onMouseEnter={() => handleClick(info)} src={info.image} key={info.key} alt="" />
-                                        </Grid>
-                                    </div>
-                                )}
+                            <Grid item>
+                                <Grid container justify="center">
+                                    {
+                                        Destination.map(info =>
+                                            <div className="slide">
+                                                <Grid item>
+                                                    <img className="destinationImg" key={info.key} onClick={() => handleClick(info)} src={info.image} key={info.key} alt="" />
+                                                </Grid>
+                                            </div>
+                                        )}
+                                </Grid>
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Grid>

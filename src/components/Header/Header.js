@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
+    border:'1px solid white',
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
@@ -173,7 +174,7 @@ const Header = () => {
         <div className="btn-login">
           {loggedInUser.isSignedIn ?
             <Button variant="contained" color="primary" onClick={handleSignOut} > Sign Out </Button>
-            : <Link to="/login"><ColorButton variant="contained" color="primary" > Sign In </ColorButton></Link>
+            : <Link to="/login" className="btn-login"><ColorButton variant="contained" color="primary" > Sign In </ColorButton></Link>
           }
         </div>
       </MenuItem>
