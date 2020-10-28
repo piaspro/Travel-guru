@@ -1,5 +1,5 @@
-### `Volunteer Network`
-### `A Full Stack React App`
+### `Travel Guru`
+### `React App`
 
 Technology Used:- `React.js`  `MetarialUi`  `Firebase`  `GoogleMap`
 
